@@ -1,19 +1,16 @@
 package com.moneymanage.moneymanager.service;
 
 import com.moneymanage.moneymanager.dto.ExpenseDTO;
-import com.moneymanage.moneymanager.dto.IncomeDTO;
 import com.moneymanage.moneymanager.entity.ProfileEntity;
 import com.moneymanage.moneymanager.repository.ProfileRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.property.access.internal.PropertyAccessFieldImpl;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 
 @Service
