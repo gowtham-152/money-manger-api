@@ -3,6 +3,10 @@ FROM eclipse-temurin:21-jdk AS builder
 WORKDIR /build
 
 COPY . .
+
+# give execute permission
+RUN chmod +x mvnw
+
 RUN ./mvnw clean package -DskipTests
 
 # ---------- Runtime stage ----------
@@ -12,4 +16,4 @@ WORKDIR /app
 COPY --from=builder /build/target/*.jar app.jar
 
 EXPOSE 9090
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
